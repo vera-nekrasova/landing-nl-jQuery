@@ -95,7 +95,7 @@ $(function () {
 	function updateForm() {
 		if (newForm) {
 			$formBtn.removeClass('btn-disabled');
-			$formBtn.value = 'Хочу похудеть';
+			$formBtn.val('Хочу похудеть');
 			newForm = false;
 		}
 	}
@@ -110,14 +110,14 @@ $(function () {
 	$popupOut.on('click touchend', function (e) {
 		if ($(e.target).hasClass(this.className)) {
 			formPopup.close();
-			$inputs.val('');
+			$inputs.val('').removeClass('err');
 		}
 	});
 
 	$btnClose.on('click touchend', function (e) {
 		if ($(e.target).hasClass(this.className)) {
 			formPopup.close();
-			$inputs.val('');
+			$inputs.val('').removeClass('err');
 		}
 	});
 
@@ -144,7 +144,7 @@ $(function () {
 	$popup.on('keydown', (e) => {
 		if (e.key === 'Escape') {
 			formPopup.close();
-			$inputs.val('');
+			$inputs.val('').removeClass('err');
 		}
 	})
 	// ------ popup-------------------
