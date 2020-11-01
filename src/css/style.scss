@@ -961,7 +961,7 @@ button:active, button:focus {
 
 	&_logo {
 		@include col();
-		@include size(3);
+		@include size(4);
 		@include size-smMin(5.5);
 		@include size-xs(9);
 		@include xs-block {

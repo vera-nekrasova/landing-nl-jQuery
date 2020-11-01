@@ -110,12 +110,14 @@ $(function () {
 	$popupOut.on('click touchend', function (e) {
 		if ($(e.target).hasClass(this.className)) {
 			formPopup.close();
+			$inputs.val('');
 		}
 	});
 
 	$btnClose.on('click touchend', function (e) {
 		if ($(e.target).hasClass(this.className)) {
 			formPopup.close();
+			$inputs.val('');
 		}
 	});
 
@@ -123,7 +125,6 @@ $(function () {
 	$form.on('submit', function (e) {
 		e.preventDefault();
 		let result = validateForm($inputs);
-		disableForm(result);
 		if (!result) {
 			$inputs.val('');
 			disableForm();
@@ -143,6 +144,7 @@ $(function () {
 	$popup.on('keydown', (e) => {
 		if (e.key === 'Escape') {
 			formPopup.close();
+			$inputs.val('');
 		}
 	})
 	// ------ popup-------------------
